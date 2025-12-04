@@ -1,0 +1,376 @@
+/* =========================
+   Global Reset & Base Styles
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background-color: #000; /* SpaceX dark theme */
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* =========================
+   Navbar
+   ========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #00bfff; /* Futuristic blue accent */
+}
+
+/* =========================
+   Hero Section
+   ========================= */
+.hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom, #000, #111);
+  padding-top: 5rem; /* offset for navbar */
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+/* Call-to-action button */
+.cta-button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #00bfff;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #0099cc;
+}
+
+/* =========================
+   Features Section
+   ========================= */
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 3rem 2rem;
+  background: #111;
+  flex-wrap: wrap;
+}
+
+.feature {
+  max-width: 250px;
+  text-align: center;
+  margin: 1rem;
+}
+
+.feature h2 {
+  margin-bottom: 0.5rem;
+  color: #00bfff;
+}
+
+.feature p {
+  color: #aaa;
+}
+
+/* =========================
+   Content Sections
+   ========================= */
+.content {
+  padding: 2rem 4rem;
+  background: #111;
+  margin: 2rem auto;
+  width: 80%;
+  border-radius: 8px;
+}
+
+.content h2 {
+  color: #00bfff;
+  margin-bottom: 1.5rem;
+}
+
+.content p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.subtitle {
+  color: #aaa;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+/* =========================
+   Experience Grid
+   ========================= */
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.exp-block {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #222;
+}
+
+.exp-block h3 {
+  color: #00bfff;
+  margin-top: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.exp-block ul {
+  list-style: disc;
+  padding-left: 1.2rem;
+  color: #ccc;
+}
+
+.exp-block li {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Education Grid
+   ========================= */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.edu-block {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #222;
+  text-align: center;
+}
+
+.edu-block h3 {
+  color: #00bfff;
+  margin-bottom: 1rem;
+}
+
+.edu-block p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* =========================
+   Hobbies Grid
+   ========================= */
+.hobbies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.hobby-block {
+  background: #1a1a1a;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #222;
+  text-align: center;
+}
+
+.hobby-block h3 {
+  color: #00bfff;
+  margin-bottom: 1rem;
+}
+
+.hobby-block p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* =========================
+   Projects Page
+   ========================= */
+.project-summary {
+  list-style: none;
+  padding-left: 0;
+  color: #ccc;
+}
+
+.project-summary li {
+  margin: 0.5rem 0;
+}
+
+.project-summary a {
+  color: #00bfff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.project-summary a:hover {
+  color: #0099cc;
+}
+
+.project-section {
+  padding: 3rem 4rem;
+  margin: 2rem auto;
+  width: 80%;
+  border-left: 4px solid #00bfff; /* stylish divider */
+  background: #111;
+  border-radius: 4px;
+}
+
+.project-section h2 {
+  color: #00bfff;
+  margin-bottom: 1rem;
+}
+
+.project-section p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* =========================
+   Timeline Page
+   ========================= */
+.timeline {
+  position: relative;
+  width: 80%;
+  margin: 4rem auto;
+  padding: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #00bfff;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 1rem 2rem;
+}
+
+.timeline-item .content {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.timeline-item h3 {
+  color: #00bfff;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-item p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Positioning left and right */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+
+/* Connector dots */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  width: 16px;
+  height: 16px;
+  background: #00bfff;
+  border-radius: 50%;
+  border: 2px solid #111;
+}
+
+.timeline-item.left::before {
+  right: -8px;
+}
+
+.timeline-item.right::before {
+  left: -8px;
+}
+
+/* =========================
+   Map Page
+   ========================= */
+#map {
+  height: 60vh;
+  width: 80%;
+  margin: 2rem auto;
+  border: 2px solid #00bfff;
+  border-radius: 8px;
+  display: block;
+  background: transparent;
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: #111;
+  font-size: 0.85rem;
+  color: #999;
+  border-top: 1px solid #222;
+}

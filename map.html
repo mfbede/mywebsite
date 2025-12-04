@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My destinations</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <!-- Navigation bar -->
+  <header class="navbar">
+    <div class="logo">My Website !</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Map</a></li>
+        <li><a href="skils.html">Skils</a></li>
+        <li><a href="hobbies.html">Hobbies</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero section -->
+  <section class="hero">
+    <h1>Explore the World</h1>
+    <p>Because I get a lot of joy from traveling...</p>
+  </section>
+
+  <!-- Map container -->
+  <div id="map"></div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My Website | Enjoy your visit !</p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    // Initialize map
+    var map = L.map('map').setView([48.8566, 2.3522], 5); // Centered on Paris
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+// Canada
+L.marker([48.4280, -71.0640]).addTo(map).bindPopup('Chicoutimi, Canada');
+L.marker([45.5017, -73.5673]).addTo(map).bindPopup('Montréal, Canada');
+L.marker([43.6511, -79.3839]).addTo(map).bindPopup('Toronto, Canada');
+L.marker([48.1500, -69.7167]).addTo(map).bindPopup('Tadoussac, Canada');
+L.marker([43.0896, -79.0849]).addTo(map).bindPopup('Niagara Falls, Canada');
+
+// USA
+L.marker([40.7128, -74.0060]).addTo(map).bindPopup('New York, USA');
+L.marker([43.6591, -70.2568]).addTo(map).bindPopup('Portland, Maine, USA');
+L.marker([42.3601, -71.0589]).addTo(map).bindPopup('Boston, USA');
+
+// UK
+L.marker([51.5074, -0.1278]).addTo(map).bindPopup('Londres, UK');
+L.marker([50.7990, -1.0901]).addTo(map).bindPopup('Portsmouth, UK');
+L.marker([50.6130, -2.4576]).addTo(map).bindPopup('Weymouth, UK');
+L.marker([51.3758, -2.3599]).addTo(map).bindPopup('Bath, UK');
+
+// Scotland
+L.marker([55.9533, -3.1883]).addTo(map).bindPopup('Edinburgh, Scotland');
+L.marker([57.4778, -4.2247]).addTo(map).bindPopup('Inverness, Scotland');
+L.marker([56.8198, -5.1052]).addTo(map).bindPopup('Fort William, Scotland');
+L.marker([57.3350, -4.4970]).addTo(map).bindPopup('Drumnadrochit, Scotland');
+
+// Italy
+L.marker([45.4642, 9.1900]).addTo(map).bindPopup('Milan, Italy');
+
+// France
+L.marker([48.8566, 2.3522]).addTo(map).bindPopup('Paris, France');
+L.marker([43.4929, -1.4731]).addTo(map).bindPopup('Bayonne, France');
+L.marker([44.8378, -0.5792]).addTo(map).bindPopup('Bordeaux, France');
+L.marker([41.9190, 8.7386]).addTo(map).bindPopup('Ajaccio, France');
+L.marker([41.3879, 9.1590]).addTo(map).bindPopup('Bonifacio, France');
+L.marker([49.4170, -0.9850]).addTo(map).bindPopup('Omaha Beach, France');
+L.marker([43.6047, 1.4442]).addTo(map).bindPopup('Toulouse, France');
+L.marker([47.5861, 1.3350]).addTo(map).bindPopup('Blois, France');
+L.marker([43.0956, -0.0463]).addTo(map).bindPopup('Lourdes, France');
+L.marker([43.2321, 0.0781]).addTo(map).bindPopup('Tarbes, France');
+L.marker([45.4397, 4.3872]).addTo(map).bindPopup('Saint-Étienne, France');
+L.marker([43.9270, 2.1480]).addTo(map).bindPopup('Albi, France');
+L.marker([43.6460, 0.5860]).addTo(map).bindPopup('Auch, France');
+
+// Spain
+L.marker([40.4168, -3.7038]).addTo(map).bindPopup('Madrid, Spain');
+L.marker([39.4699, -0.3763]).addTo(map).bindPopup('Valencia, Spain');
+L.marker([37.1773, -3.5986]).addTo(map).bindPopup('Granada, Spain');
+L.marker([36.7213, -4.4214]).addTo(map).bindPopup('Malaga, Spain');
+L.marker([42.8782, -8.5448]).addTo(map).bindPopup('Santiago de Compostela, Spain');
+L.marker([43.2630, -2.9350]).addTo(map).bindPopup('Bilbao, Spain');
+L.marker([41.3851, 2.1734]).addTo(map).bindPopup('Barcelona, Spain');
+L.marker([37.8882, -4.7794]).addTo(map).bindPopup('Córdoba, Spain');
+L.marker([37.3886, -5.9823]).addTo(map).bindPopup('Sevilla, Spain');
+L.marker([39.8628, -4.0273]).addTo(map).bindPopup('Toledo, Spain');
+L.marker([38.5980, -0.0520]).addTo(map).bindPopup('Altea, Spain');
+L.marker([38.3452, -0.4810]).addTo(map).bindPopup('Alicante, Spain');
+L.marker([42.4140, 0.1380]).addTo(map).bindPopup('Aínsa, Spain');
+
+// Sweden
+L.marker([59.3293, 18.0686]).addTo(map).bindPopup('Stockholm, Sweden');
+L.marker([59.2741, 15.2066]).addTo(map).bindPopup('Örebro, Sweden');
+L.marker([57.7089, 11.9746]).addTo(map).bindPopup('Göteborg, Sweden');
+L.marker([58.4109, 15.6216]).addTo(map).bindPopup('Linköping, Sweden');
+L.marker([56.6634, 16.3568]).addTo(map).bindPopup('Kalmar, Sweden');
+L.marker([57.7815, 14.1562]).addTo(map).bindPopup('Jönköping, Sweden');
+L.marker([59.8586, 17.6389]).addTo(map).bindPopup('Uppsala, Sweden');
+
+// Greece
+L.marker([37.9838, 23.7275]).addTo(map).bindPopup('Athens, Greece');
+
+// South America
+L.marker([-33.4489, -70.6693]).addTo(map).bindPopup('Santiago, Chile');
+L.marker([4.7110, -74.0721]).addTo(map).bindPopup('Bogotá, Colombia');
+
+
+
+  </script>
+</body>
+</html>
