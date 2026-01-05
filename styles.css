@@ -15,6 +15,17 @@ body {
 }
 
 /* =========================
+   Map Page
+   ========================= */
+#map {
+  height: 600px;    
+  width: 80%;        
+  margin: 2rem auto;
+  border: 2px solid #222;
+  border-radius: 8px;
+}
+
+/* =========================
    Navbar
    ========================= */
 .navbar {
@@ -244,14 +255,34 @@ body {
   margin: 0.5rem 0;
 }
 
-.project-summary a {
+/* Main links */
+.project-summary > li > a {
   color: #00bfff;
   text-decoration: none;
+  font-weight: bold;
   transition: color 0.3s;
 }
 
-.project-summary a:hover {
+.project-summary > li > a:hover {
   color: #0099cc;
+}
+
+/* Subtitles (nested links) */
+.project-summary li ul {
+  list-style: none;       /* remove bullets */
+  padding-left: 1.5rem;   /* indent compared to main title */
+  margin-top: 0.5rem;
+}
+
+.project-summary li ul li a {
+  color: #aaa;            /* lighter color for subtitles */
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.3s;
+}
+
+.project-summary li ul li a:hover {
+  color: #00bfff;
 }
 
 .project-section {
@@ -273,8 +304,58 @@ body {
   line-height: 1.6;
 }
 
+/* Sub-projects inside Personal Projects */
+.sub-project {
+  margin-top: 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid #00bfff;
+}
+
+.sub-project h3 {
+  color: #00bfff;
+  margin-bottom: 0.5rem;
+}
+
+.sub-project p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Photo grid for projects */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.photo-grid figure {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  padding: 1rem;
+}
+
+.photo-grid img {
+  max-width: 100%;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.05); /* subtle zoom on hover */
+}
+
+.photo-grid figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
 /* =========================
-   Timeline Page
+   Timeline Page (Corrected)
    ========================= */
 .timeline {
   position: relative;
@@ -283,6 +364,7 @@ body {
   padding: 2rem 0;
 }
 
+/* Center line */
 .timeline-line {
   position: absolute;
   left: 50%;
@@ -293,12 +375,14 @@ body {
   transform: translateX(-50%);
 }
 
+/* Base item box */
 .timeline-item {
   position: relative;
   width: 50%;
   padding: 1rem 2rem;
 }
 
+/* Box content */
 .timeline-item .content {
   background: #1a1a1a;
   border: 1px solid #222;
@@ -316,61 +400,44 @@ body {
   line-height: 1.6;
 }
 
-/* Positioning left and right */
+/* DOT on the line */
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 16px;
+  height: 16px;
+  background: #00bfff;
+  border-radius: 50%;
+  border: 3px solid #000;
+  z-index: 10;
+}
+
+/* LEFT items */
 .timeline-item.left {
   left: 0;
   text-align: right;
 }
 
+.timeline-item.left::before {
+  right: -8px;   /* dot touches the vertical line */
+}
+
+/* RIGHT items */
 .timeline-item.right {
   left: 50%;
   text-align: left;
 }
 
-/* Connector dots */
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  top: 1rem;
-  width: 16px;
-  height: 16px;
-  background: #00bfff;
-  border-radius: 50%;
-  border: 2px solid #111;
-}
-
-.timeline-item.left::before {
-  right: -8px;
-}
-
 .timeline-item.right::before {
-  left: -8px;
+  left: -8px;   /* dot touches the vertical line */
 }
 
-/* =========================
-   Map Page
-   ========================= */
-#map {
-  height: 60vh;
-  width: 80%;
-  margin: 2rem auto;
-  border: 2px solid #00bfff;
-  border-radius: 8px;
-  display: block;
-  background: transparent;
+/* Clearfix to avoid layout collapse */
+.timeline::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-/* =========================
-   Footer
-   ========================= */
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1.5rem 1rem;
-  background: #111;
-  font-size: 0.85rem;
-  color: #999;
-  border-top: 1px solid #222;
-}
+

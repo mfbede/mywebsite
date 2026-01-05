@@ -25,7 +25,7 @@
   <!-- Hero section -->
   <section class="hero">
     <h1>My Projects</h1>
-    <p>Some of the projects that I have worked on at work or University..</p>
+    <p>Some of the projects that I have worked on at work or University.</p>
   </section>
 
   <!-- Summary / Table of contents -->
@@ -33,25 +33,115 @@
     <h2>📑 Project Summary</h2>
     <ul class="project-summary">
       <li><a href="#cloud">Cloud & Identity</a></li>
-      <li><a href="#personal">Personal Projects</a></li>
+      <li>
+        <a href="#personal">Personal Projects</a>
+        <ul>
+          <li><a href="#Introo">Introduction</a></li>
+          <li><a href="#Cloudflare">CloudFlare</a></li>
+        </ul>
+      </li>
     </ul>
   </section>
 
   <!-- Project sections -->
   <section id="cloud" class="project-section">
     <h2>☁️ Cloud & Administration using Intune</h2>
-    <p>ADD CONTEXT TO THIS SECTION, PHOTOS, TECHNICAL DETAILS</p>
+    <p>Context: AzureAD administration, Intune deployments, SSO integrations. Add technical details and screenshots here.</p>
   </section>
 
   <section id="personal" class="project-section">
-    <h2>💡 Personal Projects</h2>
-    <p>ADD CONTEXT TO THIS SECTION, PHOTOS, TECHNICAL DETAILS
-    </p>
+    <h2>Personal Projects</h2>
+    <p>Some of my personal initiatives and explorations outside of work.</p>
+
+    <div id="Introo" class="sub-project">
+      <h3>Introduction</h3>
+      <p>I have understood quickly that if I am not studying anymore I will be outperformed by others and that it will be complicated to keep a level of understanding to keep working in companies. Building home labs with PFsense, proxy servers, load balancers, and experimenting with certificates and stress tests. The goal of this project is to gain some skills into Linux servers and proxy usage.</p>
+    </div>
+
+    <div id="Cloudflare" class="sub-project">
+      <h3>Cloudflare</h3>
+      <p>
+        To have a proper website and a certificate, HTTPS and a secured tunnel I have decided to use Cloudflare.<br><br>
+        First I have bought a domain name : cyber-corp.org. Next I have configured the tunnel between my machine and Cloudflare. 
+        In this section I will show you how I have achieved to do that.
+      </p>
+
+      <!-- Première série d’images -->
+      <div class="photo-grid">
+        <figure>
+          <img src="Pictures/Step1.png" alt="Domain setup screenshot">
+          <figcaption>Buying and configuring the domain cyber-corp.org</figcaption>
+        </figure>
+        <figure>
+          <img src="Pictures/step2.png" alt="Cloudflare tunnel screenshot">
+          <figcaption>Setting up the Cloudflare tunnel for secure HTTPS access</figcaption>
+        </figure>
+        <figure>
+          <img src="Pictures/step3.png" alt="Create Cloudflare tunnel screenshot">
+          <figcaption>Put the name that you want for the Cloudflare tunnel</figcaption>
+        </figure>
+        <figure>
+          <img src="Pictures/step4.png" alt="Cloudflare tunnel connector">
+          <figcaption>Here you have the connector for the Cloudflare tunnel. It will be a docker installed in the server where you have your website or your server cluster.</figcaption>
+        </figure>
+        <figure>
+          <img src="Pictures/step5.png" alt="Cloudflare tunnel connector route">
+          <figcaption>Here there is the route connector that will allow to publish my website without exposing my private IP. Also the website will be reachable with my official domain name that I have bought at Cloudflare.</figcaption>
+        </figure>
+      </div>
+
+      <br><p>
+        Now that I have finished to create my tunnel we have to create some policies 
+        and manage the access to this website
+      </p>
+
+      <div class="photo-grid">
+        <figure>
+          <img src="Pictures/Step9.png" alt="Policy creation screenshot">
+          <figcaption>Finding the path to create the policy for the website</figcaption>
+        </figure>
+        <figure>
+          <img src="Pictures/Step7.png" alt="Policy assignment screenshot">
+          <figcaption> Here I am defining the Policy that I will apply to my website. For exemple here I have setup the acces to be allowed and the session to have 24 hour lifespan. The authentication methode will be a pin code for the simplicity of the situation. There is many other options like email authentication. I just have to add the authorized emails and they will receive a confirmation in their mailbox.</figcaption>
+        </figure>
+        <figure>
+          <img src="Pictures/Step7bis.png" alt="Access management screenshot">
+          <figcaption> This is the alternate solution that I have to control the access of my website, with an email logon</figcaption>
+        </figure>
+        <figure>
+          <img src="Pictures/Step8.png" alt="Access management screenshot">
+          <figcaption> When finished creating the policy, you will land here where there is the recap of all the policies created.</figcaption>
+        </figure>
+      </div>
+
+      <br><p>
+        Now that I have finished to create my acces policy I have to create my application in Cloudflare
+      </p>
+
+      <div class="photo-grid">
+        <figure>
+          <img src="Pictures/Step9.png" alt="Policy creation screenshot">
+          <figcaption>Creating a new application (My website in this case) into Cloudflare
+        <figure>
+          <img src="Pictures/Step10.png" alt="Policy assignment screenshot">
+          <figcaption> Choose how you're app is hosted, for me it will be self hosted</figcaption>
+        </figure>
+        <figure>
+          <img src="Pictures/Step11.png" alt="Access management screenshot">
+          <figcaption> Here we are going to setup the application with Subdomain, URL</figcaption>
+        </figure>
+        <figure>
+          <img src="Pictures/Step12.png" alt="Access management screenshot">
+          <figcaption> And thats it the application have been created ! (A CORRIGER)</figcaption>
+        </figure>
+      </div>
+
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
-        <p>© 2025 My Website | Enjoy your visit !</p>
+    <p>© 2025 My Website | Enjoy your visit !</p>
   </footer>
 </body>
 </html>
